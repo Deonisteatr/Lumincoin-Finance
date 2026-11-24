@@ -1,0 +1,241 @@
+@media (max-width: 992px) {
+
+    .table {
+        display: flex;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-row {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .chart-divider {
+        display: none;
+    }
+
+    .chart-block {
+        width: 100%;
+        max-width: 437px;
+        height: auto;
+    }
+
+    .chart-canvas-wrap {
+        width: min(360px, 100%);
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .chart-canvas-wrap canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .period-btns {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .period-btns .btn-period {
+        width: auto;
+        min-width: 72px;
+        max-width: none;
+    }
+
+    .period-date {
+        margin-left: 0;
+        width: 130px;
+    }
+
+    .table-responsive-wrap {
+        overflow: visible;
+    }
+    #data-table {
+        min-width: 0;
+        display: block;
+    }
+    #data-table thead {
+        display: none;
+    }
+    #data-table tbody {
+        display: block;
+    }
+    #data-table tr {
+        display: block;
+        border: 1px solid var(--collor-border);
+        border-radius: 12px;
+        padding: 12px 14px;
+        margin-bottom: 12px;
+        background: var(--collor-white);
+    }
+    #data-table td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+        padding: 6px 0;
+        text-align: right;
+        white-space: normal;
+    }
+    #data-table td::before {
+        content: attr(data-label);
+        font-weight: 500;
+        color: var(--collor-grey);
+        text-align: left;
+        margin-right: 12px;
+        flex-shrink: 0;
+    }
+    #data-table td:last-child {
+        justify-content: flex-end;
+        padding-top: 10px;
+    }
+    #data-table tbody tr:last-child:has(td:empty) {
+        display: none;
+    }
+}
+
+@media (max-width: 710px) {
+    .sidebar-toggle {
+        display: flex;
+    }
+
+    .logo {
+        border-bottom: none;
+    }
+
+    .app-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        max-height: 100vh;
+        transform: translateX(-100%);
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.12);
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+    }
+
+    .app-sidebar.is-open {
+        transform: translateX(0);
+    }
+
+    .app-sidebar > article {
+        width: 280px !important;
+        min-height: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        box-sizing: border-box;
+    }
+
+    .app-sidebar .nav.flex-column {
+        min-height: 0 !important;
+        flex: 0 0 auto;
+        margin-bottom: 0 !important;
+    }
+
+    .app-sidebar hr {
+        margin-bottom: 70px !important;
+    }
+
+    .app-sidebar .balance-title {
+        margin-top: auto;
+        margin-bottom: 0.5rem;
+        padding-top: 1.25rem;
+        flex-shrink: 0;
+    }
+
+    .app-sidebar hr {
+        margin: 0.5rem 0;
+        flex-shrink: 0;
+    }
+
+    .app-sidebar .border-top {
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+
+    .sidebar-backdrop.is-visible {
+        display: block;
+    }
+
+    #content-layout,
+    .content-wrapper {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .card-body {
+        width: 100%;
+    }
+
+    .page-wrapper {
+        padding: 1.25rem 1rem;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .chart-block {
+        max-width: 100%;
+    }
+
+    .chart-canvas-wrap {
+        width: min(280px, calc(100vw - 2rem));
+    }
+
+    .chart-legend {
+        gap: 8px 12px;
+        margin-bottom: 20px;
+        font-size: 11px;
+    }
+
+    .period-filter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .period-dates {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .category-name {
+        max-width: 355px;
+    }
+}
+
+@media (max-width: 375px) {
+    .chart-canvas-wrap {
+        width: min(260px, calc(100vw - 1.5rem));
+    }
+
+    .period-btns .btn-period {
+        min-width: 64px;
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .category-name {
+        max-width: 290px;
+    }
+}

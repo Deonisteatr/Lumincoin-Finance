@@ -1,0 +1,90 @@
+<section class="login-box my-auto mx-auto pt-5">
+    <!-- /.login-logo -->
+    <article class="card-body login-card-body text-center">
+        <picture class="login-logo d-flex justify-content-center">
+            <img src="../../../image/Logo%20.png" alt="logo">
+        </picture>
+        <h1 class="form-title mx-auto mb-4 pt-5">Создайте аккаунт</h1>
+        <p id="common-error" class="error invalid-feedback text-center mb-3">
+            Не удалось зарегистрировать пользователя. Обратитесь в поддержку.
+        </p>
+
+        <form>
+            <section class="input-group mb-3">
+                <article class="input-group-prepend">
+                    <picture class="input-group-text">
+                        <span class="far fa-user"></span>
+                    </picture>
+                </article>
+                <input type="text" class="form-control" placeholder="Имя" id="name">
+                <span id="name-error" class="error invalid-feedback">
+                        Заполните Имя
+                    </span>
+            </section>
+            <section class="input-group mb-3">
+                <article class="input-group-prepend">
+                    <picture class="input-group-text">
+                        <span class="far fa-user"></span>
+                    </picture>
+                </article>
+                <input type="text" class="form-control" placeholder="Фамилия" id="last-name">
+                <span id="last-name-error" class="error invalid-feedback">
+                        Заполните Фамилию
+                    </span>
+            </section>
+            <section class="input-group mb-3">
+                <article class="input-group-prepend">
+                    <picture class="input-group-text">
+                        <span class="far fa-envelope-open"></span>
+                    </picture>
+                </article>
+                <input type="email" class="form-control" placeholder="Электронная почта" id="email">
+                <span id="email-error" class="error invalid-feedback">
+                        Введите корректный E-mail
+                    </span>
+            </section>
+            <section class="input-group mb-3">
+                <article class="input-group-prepend">
+                    <picture class="input-group-text">
+                        <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.4 0C4.1944 0 2.4 1.7944 2.4 4V6.4H1.6C0.7176 6.4 0 7.1176 0 8V14.4C0 15.2824 0.7176 16 1.6 16H11.2C12.0824 16 12.8 15.2824 12.8 14.4V8C12.8 7.1176 12.0824 6.4 11.2 6.4H10.4V4C10.4 1.7944 8.6056 0 6.4 0ZM11.2 8L11.2016 14.4H1.6V8H11.2ZM4 6.4V4C4 2.6768 5.0768 1.6 6.4 1.6C7.7232 1.6 8.8 2.6768 8.8 4V6.4H4Z"
+                                  fill-rule="evenodd" clip-rule="evenodd" fill="#6C757D"/>
+                        </svg>
+                    </picture>
+                </article>
+                <input type="password" class="form-control" placeholder="Пароль" id="password">
+                <span id="password-error" class="error invalid-feedback">
+                        Заполните пароль
+                    </span>
+            </section>
+            <section class="input-group mb-3">
+                <article class="input-group-prepend">
+                    <picture class="input-group-text">
+                        <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.4 0C4.1944 0 2.4 1.7944 2.4 4V6.4H1.6C0.7176 6.4 0 7.1176 0 8V14.4C0 15.2824 0.7176 16 1.6 16H11.2C12.0824 16 12.8 15.2824 12.8 14.4V8C12.8 7.1176 12.0824 6.4 11.2 6.4H10.4V4C10.4 1.7944 8.6056 0 6.4 0ZM11.2 8L11.2016 14.4H1.6V8H11.2ZM4 6.4V4C4 2.6768 5.0768 1.6 6.4 1.6C7.7232 1.6 8.8 2.6768 8.8 4V6.4H4Z"
+                                  fill-rule="evenodd" clip-rule="evenodd" fill="#6C757D"/>
+                        </svg>
+                    </picture>
+                </article>
+                <input type="password" class="form-control" placeholder="Подтверждение пароля" id="password-repeat">
+                <span id="password-repeat-error" class="error invalid-feedback">
+                        Пароль и повторение пароля должны совпадать
+                    </span>
+            </section>
+            <section class="row">
+                <article class="col-12">
+                    <button type="button" class="btn btn-primary btn-block" id="process-button">
+                        Войти
+                    </button>
+                </article>
+            </section>
+        </form>
+        <p class="login-description mt-3 d-flex justify-content-center">
+            <span class="pr-1">
+                Уже есть аккаунт?
+            </span>
+            <a class="pl-2" href="#/login">Войдите в систему</a>
+        </p>
+    </article>
+    <!-- /.login-card-body -->
+</section>

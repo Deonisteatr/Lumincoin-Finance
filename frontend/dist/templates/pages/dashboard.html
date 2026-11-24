@@ -1,0 +1,41 @@
+<section class="dashboard page-wrapper">
+    <h1 class="page-title mb-5 pb-1">Главная</h1>
+
+    <article class="d-flex flex-wrap align-items-center period-filter">
+        <section class="btn-group d-flex flex-wrap btn-group-sm period-btns" role="group">
+            <button type="button" class="btn btn-period active">Сегодня</button>
+            <button type="button" class="btn btn-period">Неделя</button>
+            <button type="button" class="btn btn-period">Месяц</button>
+            <button type="button" class="btn btn-period">Год</button>
+            <button type="button" class="btn btn-period">Все</button>
+            <button type="button" class="btn btn-period">Интервал</button>
+        </section>
+
+        <section class="period-dates d-flex align-items-center">
+            <span class="mr-1">с</span>
+            <input type="date" class="form-control form-control-sm period-date">
+            <span class="mx-1">по</span>
+            <input type="date" class="form-control form-control-sm period-date">
+        </section>
+    </article>
+
+    <div class="charts-row d-flex align-items-start justify-content-start">
+        <div class="chart-block">
+            <h2 class="chart-title">Доходы</h2>
+            <div class="chart-legend" id="incomesLegend"></div>
+            <div class="chart-canvas-wrap">
+                <canvas id="incomesChart" width="360" height="360"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-divider"></div>
+
+        <div class="chart-block">
+            <h2 class="chart-title">Расходы</h2>
+            <div class="chart-legend" id="expensesLegend"></div>
+            <div class="chart-canvas-wrap">
+                <canvas id="expensesChart" width="360" height="360"></canvas>
+            </div>
+        </div>
+    </div>
+</section>

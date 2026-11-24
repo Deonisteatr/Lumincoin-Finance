@@ -1,0 +1,41 @@
+<section class="balances-create page-wrapper">
+    <h1 class="page-title mb-4 pb-3">Создание дохода/расхода</h1>
+    <form class="create-form d-flex flex-column">
+        <select class="form-field" name="type" required>
+            <option value="" disabled selected>Тип...</option>
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+        </select>
+
+        <select class="form-field" name="category" required>
+            <option value="" disabled selected>Категория...</option>
+            <!-- опции подставятся из JS -->
+        </select>
+
+        <input type="number"
+               class="form-field"
+               name="amount"
+               placeholder="Сумма в $..."
+               min="0"
+               step="0.01"
+               required>
+
+        <input type="text"
+               class="form-field"
+               name="date"
+               placeholder="Дата..."
+               onfocus="this.type='date'"
+               onblur="if(!this.value) this.type='text'"
+               required>
+
+        <textarea class="form-field form-field--textarea"
+                  name="comment"
+                  placeholder="Комментарий..."
+                  rows="1"></textarea>
+
+        <div class="page-item-actions pt-2">
+            <button type="submit" class="btn btn-success btn-sm">Создать</button>
+            <a href="#/balances" class="btn btn-danger btn-sm">Отмена</a>
+        </div>
+    </form>
+</section>

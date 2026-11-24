@@ -1,0 +1,434 @@
+:root {
+    --bg-light-grey: #D9D9D9;
+    --collor-grey: #6C757D;
+    --collor-dark-blue: #052C65;
+    --btn-primary: #0D6EFD;
+    --collor-border: #ced4da;
+    --collor-page-header: #290661;
+    --collor-white: #ffffff;
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../static/fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../static/fonts/Roboto-Regular.ttf");
+}
+
+@theme {
+    --font-medium: 'Roboto-Medium';
+    --font-regular: 'Roboto-Regular';
+}
+body {
+    font-family: var(--font-medium), sans-serif;
+}
+
+.card-body {
+    width: 437px;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: none;
+    z-index: 1050;
+    border: 1px solid var(--collor-border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--collor-dark-blue);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    border-bottom: 1px solid var(--collor-border);
+}
+
+.sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1035;
+}
+
+.app-sidebar {
+    flex-shrink: 0;
+    background: var(--collor-white);
+    z-index: 1040;
+    transition: transform 0.25s ease;
+}
+
+.categories-link {
+    border-radius: 5px 5px 0 0;
+}
+
+.nav-treeview {
+    border-radius: 0 0 5px 5px;
+}
+
+.avatar-wrapper {
+    width: 36px;
+    height: 36px;
+    background-color: var(--bg-light-grey);
+    color: var(--collor-grey);
+    flex-shrink: 0;
+}
+
+.avatar-wrapper i {
+    font-size: 1.25rem;
+    color: inherit;
+}
+
+.user-name,
+.balance-title {
+    font-family: var(--font-medium), sans-serif;
+    color: var(--collor-dark-blue);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.balance-title span {
+    color: var(--btn-primary);
+}
+
+.nav-treeview {
+    border: 1px solid var(--btn-primary);
+}
+
+.form-title {
+    color: var(--collor-dark-blue);
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.input-group {
+    border: 1px solid var(--collor-border) !important;
+}
+
+.input-group-prepend {
+    background-color: var(--bg-light-grey);
+    color: var(--collor-grey);
+}
+
+.login-box .form-control,
+.login-card-body .form-control {
+    background-color: #fff !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.login-box .form-control:focus {
+    background-color: #fff !important;
+    box-shadow: none !important;
+}
+
+.login-box .input-group {
+    border: var(--collor-border);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.login-box .input-group .form-control {
+    border: none !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+}
+
+.login-box .input-group .input-group-text {
+    border: none;
+    background-color: var(--bg-light-grey);
+    color: var(--collor-grey);
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+#content-layout,
+.content-wrapper {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0 !important;
+    padding: 0;
+    background-color: #fff !important;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: none;
+    padding: 2.5rem 3rem;
+    background: transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 960px;
+}
+
+.page-item {
+    border: 1px solid var(--collor-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page-header {
+    font-weight: 500;
+    color: var(--collor-page-header);
+    margin: 0 0 1rem 0;
+    font-family: var(--font-medium), sans-serif;
+}
+
+.page-item-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.page-item-actions .btn {
+    border-radius: 6px;
+}
+
+/* карточка с плюсом */
+.page-item--add {
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.page-item--add a {
+    color: var(--collor-border);
+}
+
+.page-item--add:hover {
+    border-color: var(--btn-primary);
+    color: var(--btn-primary);
+}
+
+.page-title {
+    color: var(--collor-dark-blue);
+    font-weight: 500;
+    font-size: 40px;
+    font-family: var(--font-medium), sans-serif;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.category-name {
+    width: 397px;
+    border: 1px solid var(--collor-border);
+    border-radius: 5px;
+}
+
+.category-name::placeholder {
+    color: var(--collor-grey);
+    font-weight: 400;
+    font-size: 15px;
+    font-family: var(--font-regular), sans-serif;
+}
+
+.popup-wrapper {
+    z-index: 1050;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.popup {
+    border-radius: 12px;
+    opacity: 1;
+    z-index: 1051;
+}
+
+.popup p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--collor-page-header);
+}
+
+.period-filter {
+    gap: 1rem;
+}
+
+.period-btns {
+    gap: 20px;
+}
+
+.period-btns .btn-period {
+    border: 1px solid var(--collor-grey);
+    color: var(--collor-grey);
+    border-radius: 0.25rem !important;
+    width: 100px;
+    font-size: 1rem;
+}
+
+.period-btns .btn-period.active {
+    background-color: var(--collor-grey);
+    color: var(--collor-white);
+}
+
+.period-date {
+    width: 140px;
+    margin-left: 1rem;
+}
+
+.orders-tools {
+    gap: 10px;
+}
+
+.create-form {
+    gap: 12px;
+    max-width: 400px;
+}
+
+.form-field {
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid var(--collor-border);
+    border-radius: 8px;
+    font-family: var(--font-regular), sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+    appearance: none;
+}
+
+.form-field::placeholder {
+    color: var(--collor-grey);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.form-field--textarea {
+    height: 42px;
+    resize: none;
+    line-height: 1.3;
+    padding-top: 10px;
+}
+
+.page-item-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.page-item-actions .btn {
+    border-radius: 6px;
+    min-width: 90px;
+    padding: 0.4rem 1rem;
+}
+
+.charts-row {
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 140px;
+}
+
+.chart-block {
+    width: 437px;
+    height: 467px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--collor-page-header);
+    margin: 0 0 12px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 16px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    color: #000;
+    font-family: var(--font-regular), sans-serif;
+}
+
+.chart-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chart-legend-color {
+    width: 18px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.chart-canvas-wrap {
+    width: 360px;
+    flex-shrink: 0;
+    height: 360px;
+    position: relative;
+}
+
+.chart-canvas-wrap canvas {
+    width: 360px !important;
+    height: 360px !important;
+    display: block;
+}
+
+.chart-divider {
+    width: 1px;
+    min-height: 360px;
+    background: var(--bg-light-grey);
+    margin: 0 1.5rem;
+    align-self: center;
+}
+
+/*Столкнулся с проблемой-в браузере Chrome идет заполнение инпута .form-control голубым фоном
+ пришлось искать помощь*/
+/* Перебиваем автозаполнение Chrome */
+.login-box input.form-control:-webkit-autofill,
+.login-box input.form-control:-webkit-autofill:hover,
+.login-box input.form-control:-webkit-autofill:focus,
+.login-box input.form-control:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    box-shadow: 0 0 0 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #212529 !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.login-description {
+    font-family: var(--font-regular), sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+}
+

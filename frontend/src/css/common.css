@@ -65,7 +65,20 @@ body {
     flex-shrink: 0;
     background: var(--collor-white);
     z-index: 1040;
-    transition: transform 0.25s ease;
+    transition: transform 0.75s ease;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-sidebar .d-flex.flex-column {
+    width: 280px;
+}
+
+.app-sidebar .nav.flex-column {
+    flex-grow: 1;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .categories-link {
@@ -73,7 +86,23 @@ body {
 }
 
 .nav-treeview {
+    border: 1px solid transparent;
     border-radius: 0 0 5px 5px;
+    display: none !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+}
+
+.menu-open > .nav-treeview,
+.nav-item.menu-open > .nav-treeview {
+    border-color: var(--btn-primary);
+    display: flex !important;
+}
+
+.nav-treeview .nav-item,
+.nav-treeview .nav-link {
+    width: 100%;
+    display: block;
 }
 
 .avatar-wrapper {
@@ -99,10 +128,6 @@ body {
 
 .balance-title span {
     color: var(--btn-primary);
-}
-
-.nav-treeview {
-    border: 1px solid var(--btn-primary);
 }
 
 .form-title {
@@ -152,6 +177,8 @@ body {
 
 .wrapper {
     overflow: hidden;
+    min-height: 100vh;
+    align-items: stretch;
 }
 
 #content-layout,

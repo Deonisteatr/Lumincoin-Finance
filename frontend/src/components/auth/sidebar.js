@@ -1,23 +1,68 @@
 export class Sidebar {
     constructor() {
-        console.log('SIDEBAR');
 
-        this.initTreeview();
+        this.initCategoriesToggle();
         this.initMobilSidebar();
+        this.setActiveSidebarLink()
     }
 
-    initTreeview() {
-        // Проверяем, что jQuery и AdminLTE доступны
-        if (typeof $ === 'undefined' || !$.fn.Treeview) {
-            console.warn('jQuery или AdminLTE Treeview не загружены');
-            return;
+    // Переключатель категорий
+    initCategoriesToggle() {
+        const categoriesLink = document.querySelector('.categories-link');
+        if (!categoriesLink) return;
+
+        const parentItem = categoriesLink.closest('.nav-item');
+        if (!parentItem) return;
+
+        categoriesLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            parentItem.classList.toggle('menu-open');
+        });
+    }
+    // Функция переключения класса "active" по ссылкам
+    setActiveSidebarLink () {
+        const currentHash = window.location.hash || '#/';
+
+        // Снимаем active и menu-open со всего
+        document.querySelectorAll('.app-sidebar .nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelectorAll('.app-sidebar .nav-item.menu-open').forEach(item => {
+            item.classList.remove('menu-open');
+        });
+
+        let activeLink = null;
+
+        document.querySelectorAll('.app-sidebar .nav-link').forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#' || href === 'javascript:void(0)') return;
+
+            if (href === currentHash ||
+                (href !== '#/' && currentHash.startsWith(href + '/'))) {
+                activeLink = link;
+            }
+        });
+
+        // Главная
+        if (!activeLink && (currentHash === '#/' || currentHash === '#/dashboard')) {
+            activeLink = document.querySelector('.app-sidebar a[href="#/"]') ||
+            document.querySelector('.app-sidebar a[href="#/dashboard"]');
         }
 
-        setTimeout(() => {
-            if (window.$ && $.fn.Treeview) {
-                $('[data-widget="treeview"]').Treeview('init');
+        if (activeLink) {
+            activeLink.classList.add('active');
+
+            // Если пункт внутри «Категории» — открываем родителя
+            const treeview = activeLink.closest('.nav-treeview');
+            if (treeview) {
+                const parentItem = treeview.closest('.nav-item');
+                parentItem?.classList.add('menu-open');
+                const categoriesLink = parentItem?.querySelector('.categories-link');
+                categoriesLink?.classList.add('active');
+                // treeview.closest('.nav-item')?.classList.add('menu-open');
             }
-        }, 0);
+        }
     }
 
     initMobilSidebar() {
@@ -39,7 +84,10 @@ export class Sidebar {
             document.body.style.overflow = '';
         };
 
-        toggle.addEventListener('click', () => {
+        const newToggle = toggle.cloneNode(true);
+        toggle.parentNode.replaceChild(newToggle, toggle);
+
+        newToggle.addEventListener('click', () => {
             sidebar.classList.contains('is-open') ? close() : open();
         });
         backdrop?.addEventListener('click', close);

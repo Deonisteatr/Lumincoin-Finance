@@ -4,23 +4,22 @@
         <picture class="login-logo d-flex justify-content-center">
             <img src="../../../image/Logo%20.png" alt="logo">
         </picture>
-        <h1 class="form-title mx-auto mb-4 pt-5">Вход</h1>
-        <p id="common-error" class="error invalid-feedback text-center mb-3">
-            Неправильный E-mail или пароль
-        </p>
+        <h1 class="form-title mx-auto mb-2 pt-5">Вход</h1>
+        <p id="common-error" class="error invalid-feedback text-center mb-3">Неправильный email или пароль</p>
         <form>
-            <section class="input-group mb-3">
+            <section class="input-group mt-3">
                 <article class="input-group-prepend">
                     <picture class="input-group-text">
                         <span class="far fa-envelope-open"></span>
                     </picture>
                 </article>
                 <input type="email" class="form-control" placeholder="Электронная почта" id="email">
-                <span id="email-error" class="error invalid-feedback">
-                        Введите корректный E-mail
-                    </span>
             </section>
-            <section class="input-group mb-3">
+            <span id="email-error" class="error invalid-feedback">
+                Введите корректный E-mail
+            </span>
+
+            <section class="input-group mt-3">
                 <article class="input-group-prepend">
                     <picture class="input-group-text">
                         <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,11 +30,12 @@
                     </picture>
                 </article>
                 <input type="password" class="form-control" placeholder="Пароль" id="password">
-                <span id="password-error" class="error invalid-feedback">
-                        Заполните пароль
-                    </span>
             </section>
-            <section class="row mb-3">
+            <span id="password-error" class="error invalid-feedback">
+                Заполните пароль
+            </span>
+
+            <section class="row mt-3 mb-3">
                 <article class="col-12">
                     <section class="icheck-primary text-left">
                         <input type="checkbox" id="remember-me">

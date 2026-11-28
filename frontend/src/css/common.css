@@ -6,6 +6,7 @@
     --collor-border: #ced4da;
     --collor-page-header: #290661;
     --collor-white: #ffffff;
+    --collor-red: #dc3545;
 }
 
 @font-face {
@@ -118,12 +119,18 @@ body {
     color: inherit;
 }
 
-.user-name,
+.user-name {
+    font-family: var(--font-regular), sans-serif;
+    color: var(--collor-dark-blue);
+    font-weight: 500;
+    font-size: 14px;
+}
+
 .balance-title {
     font-family: var(--font-medium), sans-serif;
     color: var(--collor-dark-blue);
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 14px;
 }
 
 .balance-title span {
@@ -134,11 +141,11 @@ body {
     color: var(--collor-dark-blue);
     font-weight: 500;
     font-size: 40px;
+    padding-bottom: 10px;
 }
 
-.input-group {
-    border: 1px solid var(--collor-border) !important;
-}
+/*.input-group {*/
+/*}*/
 
 .input-group-prepend {
     background-color: var(--bg-light-grey);
@@ -157,10 +164,18 @@ body {
     box-shadow: none !important;
 }
 
+.login-box .form-control.is-invalid {
+    border-color: var(--collor-red) !important;
+}
+.login-box .input-group:has(.is-invalid) {
+    border-color: var(--collor-red) !important;
+}
+
 .login-box .input-group {
-    border: var(--collor-border);
+    border: 1px solid var(--collor-border) !important;
     border-radius: 0.25rem;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 .login-box .input-group .form-control {
@@ -173,6 +188,33 @@ body {
     border: none;
     background-color: var(--bg-light-grey);
     color: var(--collor-grey);
+}
+
+.log-out-system {
+    position: relative;
+    cursor: pointer;
+}
+
+.log-out-process {
+    display: none;
+}
+
+.log-out-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--collor-white);
+    z-index: 1000;
+}
+
+.btn-close {
+    border: none;
+}
+
+.btn-exit {
+    border: none;
 }
 
 .wrapper {

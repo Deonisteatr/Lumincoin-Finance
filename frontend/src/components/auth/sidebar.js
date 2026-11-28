@@ -1,9 +1,43 @@
+import {Logout} from "../logout.js";
+import {AuthUtils} from "../../utils/auth-utils.js";
+
 export class Sidebar {
     constructor() {
+
+        const userInfo = JSON.parse(AuthUtils.getAuthInfo(AuthUtils.userInfoTokenKey) || '{}');
+        document.getElementById('user-name').innerText =
+            `${userInfo.name || ''} ${userInfo.lastName || ''}`.trim();
 
         this.initCategoriesToggle();
         this.initMobilSidebar();
         this.setActiveSidebarLink()
+
+        this.logOutProcessElement = document.getElementById('log-out-process');
+        this.closeLogOutElement = document.getElementById('close-log-out');
+        this.exitSystemElement = document.getElementById('exit-system');
+        this.logOutSystemElement = document.getElementById('log-out-system');
+
+        // открытие — клик по блоку пользователя
+        this.logOutSystemElement?.addEventListener('click', (e) => {
+            if (e.target.closest('#log-out-process')) {
+                return;
+            }
+            this.showLogOut();
+        });
+
+        // закрытие крестиком
+        this.closeLogOutElement?.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.hideLogOut();
+        });
+
+        // выход из системы
+        this.exitSystemElement?.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.performLogout().then();
+        })
     }
 
     // Переключатель категорий
@@ -60,7 +94,6 @@ export class Sidebar {
                 parentItem?.classList.add('menu-open');
                 const categoriesLink = parentItem?.querySelector('.categories-link');
                 categoriesLink?.classList.add('active');
-                // treeview.closest('.nav-item')?.classList.add('menu-open');
             }
         }
     }
@@ -95,5 +128,21 @@ export class Sidebar {
         window.addEventListener('resize', () => {
             if (window.innerWidth > 710) close();
         });
+    }
+
+    //Открытие окна функционала выхода из системы
+    showLogOut = () => {
+        this.logOutProcessElement?.classList.remove('log-out-process');
+        this.logOutProcessElement?.classList.add('log-out-active');
+    }
+
+    // закрытие крестиком
+    hideLogOut = () => {
+        this.logOutProcessElement?.classList.add('log-out-process');
+        this.logOutProcessElement?.classList.remove('log-out-active');
+    }
+
+    async performLogout() {
+        new Logout();
     }
 }

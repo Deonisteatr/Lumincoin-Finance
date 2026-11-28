@@ -48,7 +48,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link categories-link d-flex justify-content-between py-3 active">
+                    <a href="javascript:void(0)"
+                       class="nav-link categories-link d-flex justify-content-between py-3 active">
                         <p class="my-auto">
                             Категории
                         </p>
@@ -70,12 +71,23 @@
             </ul>
             <h6 class="balance-title mt-auto pb-0 px-4">Баланс: <span class="">500$</span></h6>
 
-            <section class="pt-4 pb-5 px-4  border-top flex-shrink-0">
+            <section id="log-out-system" class="log-out-system pt-4 pb-5 px-3  border-top flex-shrink-0">
+                <article id="log-out-process" class="log-out-process px-5">
+                    <section class="d-flex justify-content-between align-items-center">
+                        <button id="close-log-out" class="btn-close bg-white">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <button id="exit-system" class="btn-exit bg-white">
+                            <i class="fa fa-sign-out-alt"></i>
+                        </button>
+                    </section>
+                    <p class="warning my-5 text-center">Вы выходите из системы</p>
+                </article>
                 <article class="d-flex align-items-center text-decoration-none">
                     <picture class="avatar-wrapper d-flex align-items-center justify-content-center rounded-circle">
                         <i class="far fa-user"></i>
                     </picture>
-                    <span class="ml-3 user-name">Roman Chernov</span>
+                    <span id="user-name" class="ml-3 user-name">Roman Chernov</span>
                 </article>
             </section>
         </article>

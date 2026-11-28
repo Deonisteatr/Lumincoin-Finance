@@ -49,6 +49,7 @@ export default {
                 { from: "./node_modules/@fortawesome/fontawesome-free/webfonts", to: "webfonts" },
                 { from: "./node_modules/@fortawesome/fontawesome-free/css/all.min.css", to: "css" },
                 { from: "./node_modules/admin-lte/dist/css/adminlte.min.css", to: "css" },
+                { from: "./node_modules/icheck-bootstrap/icheck-bootstrap.min.css", to: "css" },
                 { from: "./node_modules/jquery/dist/jquery.min.js", to: "js" },
                 { from: "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", to: "js" },
                 { from: "./node_modules/admin-lte/dist/js/adminlte.min.js", to: "js" },

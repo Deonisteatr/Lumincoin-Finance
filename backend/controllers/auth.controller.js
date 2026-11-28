@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const ValidationUtils = require("../utils/validation.utils");
 const TokenUtils = require("../utils/token.utils");
 const UserModel = require('../models/user.model');
@@ -26,7 +26,7 @@ class AuthController {
                     .json({error: true, message: "User with given email already exist"});
             }
 
-            const salt = await bcrypt.genSalt(Number('example'));
+            const salt = await bcrypt.genSalt(10);
             const hashPassword = await bcrypt.hash(req.body.password, salt);
 
             let id = 1;

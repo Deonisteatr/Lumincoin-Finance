@@ -4,46 +4,46 @@
         <picture class="login-logo d-flex justify-content-center">
             <img src="../../../image/Logo%20.png" alt="logo">
         </picture>
-        <h1 class="form-title mx-auto mb-4 pt-5">Создайте аккаунт</h1>
+        <h1 class="form-title mx-auto pt-5">Создайте аккаунт</h1>
         <p id="common-error" class="error invalid-feedback text-center mb-3">
             Не удалось зарегистрировать пользователя. Обратитесь в поддержку.
         </p>
 
         <form>
-            <section class="input-group mb-3">
+            <section class="input-group">
                 <article class="input-group-prepend">
                     <picture class="input-group-text">
                         <span class="far fa-user"></span>
                     </picture>
                 </article>
                 <input type="text" class="form-control" placeholder="Имя" id="name">
-                <span id="name-error" class="error invalid-feedback">
-                        Заполните Имя
-                    </span>
             </section>
-            <section class="input-group mb-3">
+            <span id="name-error" class="error invalid-feedback mb-3">
+                Введите корректное Имя
+            </span>
+            <section class="input-group">
                 <article class="input-group-prepend">
                     <picture class="input-group-text">
                         <span class="far fa-user"></span>
                     </picture>
                 </article>
                 <input type="text" class="form-control" placeholder="Фамилия" id="last-name">
-                <span id="last-name-error" class="error invalid-feedback">
-                        Заполните Фамилию
-                    </span>
             </section>
-            <section class="input-group mb-3">
+            <span id="last-name-error" class="error invalid-feedback mb-3">
+                Введите корректную Фамилию
+            </span>
+            <section class="input-group">
                 <article class="input-group-prepend">
                     <picture class="input-group-text">
                         <span class="far fa-envelope-open"></span>
                     </picture>
                 </article>
                 <input type="email" class="form-control" placeholder="Электронная почта" id="email">
-                <span id="email-error" class="error invalid-feedback">
-                        Введите корректный E-mail
-                    </span>
             </section>
-            <section class="input-group mb-3">
+            <span id="email-error" class="error invalid-feedback mb-3">
+                Введите корректный E-mail
+            </span>
+            <section class="input-group">
                 <article class="input-group-prepend">
                     <picture class="input-group-text">
                         <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,11 +53,11 @@
                     </picture>
                 </article>
                 <input type="password" class="form-control" placeholder="Пароль" id="password">
-                <span id="password-error" class="error invalid-feedback">
-                        Заполните пароль
-                    </span>
             </section>
-            <section class="input-group mb-3">
+            <span id="password-error" class="error invalid-feedback mb-3">
+                Введите корректный пароль
+            </span>
+            <section class="input-group">
                 <article class="input-group-prepend">
                     <picture class="input-group-text">
                         <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,11 +67,11 @@
                     </picture>
                 </article>
                 <input type="password" class="form-control" placeholder="Подтверждение пароля" id="password-repeat">
-                <span id="password-repeat-error" class="error invalid-feedback">
-                        Пароль и повторение пароля должны совпадать
-                    </span>
             </section>
-            <section class="row">
+            <span id="password-repeat-error" class="error invalid-feedback mb-3">
+                Пароль и повторение пароля должны совпадать
+            </span>
+            <section class="row  mt-3 pt-1">
                 <article class="col-12">
                     <button type="button" class="btn btn-primary btn-block" id="process-button">
                         Войти

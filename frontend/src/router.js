@@ -11,10 +11,13 @@ import {ExpensesEdit} from "./components/expenses/expenses-edit.js";
 import {Balances} from "./components/balances/balances.js";
 import {BalancesCreate} from "./components/balances/balances-create.js";
 import {BalancesEdit} from "./components/balances/balances-edit.js";
+import {Logout} from "./components/logout.js";
 
 export class Router {
     constructor() {
         this.titlePageElement = document.getElementById('title');
+        this.adminLteStyleElement = document.getElementById('adminlte_style');
+        this.routeStyleLinks = [];
 
         this.initEvents();
 
@@ -44,6 +47,7 @@ export class Router {
                 load: () => {
                     new Login();
                 },
+                styles: ['icheck-bootstrap.min.css'],
             },
             {
                 route: '#/sign-up',
@@ -53,6 +57,7 @@ export class Router {
                 load: () => {
                     new SignUp();
                 },
+                styles: ['icheck-bootstrap.min.css'],
             },
             {
                 route: '#/sidebar',
@@ -161,6 +166,12 @@ export class Router {
                     new Dashboard();
                 },
             },
+            {
+                route: '#/logout',
+                load: () => {
+                    new Logout();
+                },
+            },
         ]
     }
 
@@ -169,11 +180,39 @@ export class Router {
         window.addEventListener('hashchange', this.activateRoute.bind(this));
     }
 
+
+    clearRouteStyles() {
+        this.routeStyleLinks.forEach(link => link.remove());
+        this.routeStyleLinks = [];
+    }
+
+    applyRouteStyles(styles = []) {
+        this.clearRouteStyles();
+
+        styles.forEach(style => {
+            // не дублируем, если уже есть такой href
+            const exists = document.querySelector(`link[href="/css/${style}"]`);
+            if (exists) {
+                this.routeStyleLinks.push(exists);
+                return;
+            }
+
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '/css/' + style;
+            link.dataset.routeStyle = 'true'; // метка «свой» стиль
+            document.head.insertBefore(link, this.adminLteStyleElement);
+            this.routeStyleLinks.push(link);
+        });
+    }
+
     async activateRoute() {
         const urlRoute = window.location.hash || '#/';
         const newRoute = this.routes.find(item => item.route === urlRoute);
 
         if (newRoute) {
+            this.applyRouteStyles(newRoute.styles || []);
+
             if (newRoute.title) {
                 this.titlePageElement.innerText = newRoute.title + ' | Lumincoin Finance';
             }

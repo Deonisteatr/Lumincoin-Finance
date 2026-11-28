@@ -7,14 +7,14 @@
     <aside class="app-sidebar">
         <!-- Control sidebar content goes here -->
         <article class="d-flex flex-column h-100 min-vh-100 flex-shrink-0 p-3 border-right">
-            <a href="/"
+            <a href="#/dashboard"
                class="logo d-flex align-items-center justify-content-center pb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                 <img src="../image/Logo%20.png" alt="Logo" class="brand-image" style="opacity: .8">
             </a>
             <hr>
             <ul class="nav nav-pills flex-column flex-grow-1 mb-0" data-widget="treeview" role="menu">
                 <li class="nav-item">
-                    <a href="#/" class="nav-link d-flex align-items-center active" aria-current="page">
+                    <a href="#/dashboard" class="nav-link d-flex align-items-center active" aria-current="page">
                         <svg class="my-2" width="15" height="14" viewBox="0 0 15 14" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.5 12.2929V5.79289H2.5V12.2929C2.5 12.569 2.72386 12.7929 3 12.7929H12C12.2761 12.7929 12.5 12.569 12.5 12.2929V5.79289H13.5V12.2929C13.5 13.1213 12.8284 13.7929 12 13.7929H3C2.17157 13.7929 1.5 13.1213 1.5 12.2929Z"
@@ -48,7 +48,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link categories-link d-flex justify-content-between py-3 active">
+                    <a href="javascript:void(0)"
+                       class="nav-link categories-link d-flex justify-content-between py-3 active">
                         <p class="my-auto">
                             Категории
                         </p>
@@ -70,12 +71,23 @@
             </ul>
             <h6 class="balance-title mt-auto pb-0 px-4">Баланс: <span class="">500$</span></h6>
 
-            <section class="pt-4 pb-5 px-4  border-top flex-shrink-0">
+            <section id="log-out-system" class="log-out-system pt-4 pb-5 px-3  border-top flex-shrink-0">
+                <article id="log-out-process" class="log-out-process px-5">
+                    <section class="d-flex justify-content-between align-items-center">
+                        <button id="close-log-out" class="btn-close bg-white">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <button id="exit-system" class="btn-exit bg-white">
+                            <i class="fa fa-sign-out-alt"></i>
+                        </button>
+                    </section>
+                    <p class="warning my-5 text-center">Вы выходите из системы</p>
+                </article>
                 <article class="d-flex align-items-center text-decoration-none">
                     <picture class="avatar-wrapper d-flex align-items-center justify-content-center rounded-circle">
                         <i class="far fa-user"></i>
                     </picture>
-                    <span class="ml-3 user-name">Roman Chernov</span>
+                    <span id="user-name" class="ml-3 user-name">Roman Chernov</span>
                 </article>
             </section>
         </article>
